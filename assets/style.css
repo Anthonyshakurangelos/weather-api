@@ -1,0 +1,36 @@
+body{
+background-color: rgb(86, 166, 219);
+}
+
+#weather {
+text-align: center;
+color: whitesmoke;
+}
+
+header{
+ 
+ border: 5px;
+ background-color: rgb(74, 88, 216);
+
+}
+
+.currentsection{
+    margin-right: 818px;
+}
+
+#forecast {
+text-align: center;
+margin-right: 500px;
+margin-bottom: -100;
+}
+.icons{
+    border: 2px solid black;
+    margin: 8px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    left: 560px;
+    top: 200px;
+    background-color: #096d8f;
+    color: white;
+}
