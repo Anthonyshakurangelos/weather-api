@@ -8,12 +8,12 @@ var currentTemp = document.querySelector("#currentTemp");
 var currentDay = document.querySelector("#current");
 var currentWind = document.querySelector("#currentWind");
 var currentHumidity = document.querySelector("#currentHumidity");
+var unhideDiv1 = document.getElementById("icons");
 var unhideDiv1 = document.getElementById("icons1");
 var unhideDiv2 = document.getElementById("icons2");
 var unhideDiv3 = document.getElementById("icons3");
 var unhideDiv4 = document.getElementById("icons4");
 
-var unhideDiv4 = document.getElementById("icons4");
 var unhideDiv5 = document.getElementById("icons5");
 var city = [];
 var hideDiv = document.getElementById("weatherImg");
@@ -63,47 +63,47 @@ function getWeather() {
 searchBtn.addEventListener("click", getWeather);
 
 function getApi() {
-  // var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=118c7f089309d40df508ea89da910c9e&units=imperial';
+  var requestUrl5 = 'https://api.openweathermap.org/data/2.5/forecast?q='+inputValue.value+'&appid=118c7f089309d40df508ea89da910c9e&units=imperial';
 //   var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  var requestUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-  console.log(requestUrl);
-  fetch(requestUrl)
+  // var requestUrl5 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  console.log(requestUrl5);
+  fetch(requestUrl5)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      for (i = 3; i < 30; i += 8) {
-        for (i = 3; i < 36; i += 8) {
+      for (i = 1; i < 16; i += 1) {
+        for (i = 1; i < 16; i += 1) {
           document.getElementById("temp" + (i + 1)).innerHTML =
             "temp: " + data["list"][i]["main"]["temp"];
         }
       }
-      for (i = 3; i < 30; i += 8) {
+      for (i = 1; i < 16; i += 1) {
         document.getElementById("day" + (i + 1)).innerHTML =
           "Date: " + data["list"][i]["dt_txt"].split(" ")[0];
-        for (i = 3; i < 36; i += 8) {
+        for (i = 1; i < 16; i += 1) {
           document.getElementById("day" + (i + 1)).innerHTML =
             "Date: " + dayjs(data["list"][i]["dt_txt"]).format("M/D/YYYY");
         }
       }
-      for (i = 3; i < 30; i += 8) {
-        for (i = 3; i < 36; i += 8) {
+      for (i = 1; i < 16; i += 1) {
+        for (i = 1; i < 16; i += 1) {
           document.getElementById("wind" + (i + 1)).innerHTML =
             "wind: " + data["list"][i]["wind"]["speed"] + " MPH";
         }
       }
-      for (i = 3; i < 30; i += 8) {
-        for (i = 3; i < 36; i += 8) {
+      for (i = 1; i <16; i += 1) {
+        for (i = 1; i < 16; i += 1) {
           document.getElementById("humidity" + (i + 1)).innerHTML =
-            "Humidity: " + data["list"][i]["main"]["humidity"] + " %";
+            "humidity: " + data["list"][i]["main"]["humidity"] + " %";
         }
       }
-      for (i = 3; i < 30; i += 8) {
-        for (i = 3; i < 36; i += 8) {
+      for (i = 1; i < 16; i += 1) {
+        for (i = 1; i < 16; i += 1) {
           document.getElementById("img" + (i + 1)).src =
             "http://openweathermap.org/img/wn/" +
-            data["list"][i]["weather"][0]["icon"] +
+            data["list"][i]["weather"][0]["icons"] +
             ".png";
         }
       }
@@ -113,14 +113,15 @@ function getApi() {
 var nameValue = data['city']['name'];
         nameEl.innerHTML = nameValue;
         localStorage.setItem('City', City);
-        console.log(theCity);
-        //function call to add the history of searches to html
+        console.log(City)
          searchFunction()
          
       });
   }
 
 searchBtn.addEventListener("click", getApi);
+
+
 function removeHide() {
   unhideDiv.classList.remove("hide");
   unhideDiv1.classList.remove("hide");
@@ -131,7 +132,6 @@ function removeHide() {
   hideDiv.classList.add("hide");
 }
 
-searchBtn.addEventListener("click", removeHide);
 searchBtn.addEventListener("click", removeHide);
 
 
