@@ -1,7 +1,12 @@
-# weather-api
-## When I type a city name in search bar 
-## I am then presented the date and current weather of that city
-## with icons representing the weather
-## And also presented with the next 5 days of the forecast
-## Then my search history gets stored to local storage 
-## And saved on the screen 
+# Weather-Api
+## Description
+
+-This is a third party weather api that allows you to search for a city's current temp and a 5-day forecast.
+
+## Installation
+
+-N/A
+
+## Usage
+Here is a live link!
+ [https://anthonyshakurangelos.github.io/third-party-api/]
