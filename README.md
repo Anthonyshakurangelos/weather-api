@@ -9,4 +9,4 @@
 
 ## Usage
 Here is a live link!
- [https://anthonyshakurangelos.github.io/third-party-api/]
+[https://anthonyshakurangelos.github.io/weather-api/]
